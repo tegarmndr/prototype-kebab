@@ -6,26 +6,33 @@
     <title>Login</title>
 
     <link href="bootstrap-5.2.3-dist/css/bootstrap.min.css" rel="stylesheet" >
-</head>
-<body>
-    <div class="container vh-100 bg-primary py-5 px-5">
-        <div class="container py-1 px-4 h-100 bg-info px-xl-4">
-            <div class="row d-flex justify-content-center align-items-center h-100 bg-danger mx-lg-2 mx-xl-4">
-                <div class="col-12 col-md-9 col-lg-7 col-xl-6 col-xxl-5">
-                    <div class="card shadow pt-4 px-5 mx-md-3 mx-lg-4 pb-2">
-                        <h1 class="card-title text-center fw-bold pb-2">Selamat Datang</h1>
-                        <img src="./logo-bang-aji.png" alt="sample" class="card-img-top" width="250px" height="250px">
-                        <p class="form-label mt-3">Username:</p>
-                        <input type="text" class="form-control">
-                        <p class="form-label mt-4">Password:</p>
-                        <input type="password" class="form-control mb-4">
-                        <button class="btn btn-primary mb-4">Masuk</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <script src="bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <style>
+        .login-container {
+            max-width: 300px;
+        }
+    </style>
+
+</head>
+    <body class="d-flex align-items-center justify-content-center vh-100">
+        <div class="container login-container rounded-4 pt-1 shadow">
+            <h1 class="text-center fw-semibold mt-4">Selamat Datang</h2>
+            <div class="d-flex justify-content-center align-items-center mb-3 mt-2">
+                <img src="./logo-bang-aji.png" alt="Logo" width="200px" height="200px">
+            </div>
+            <form class="mx-3 pb-5">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username:</label>
+                    <input type="text" class="form-control" id="username" placeholder="Masukkan username">
+                </div>
+                <div class="my-4">
+                    <label for="password" class="form-label">Password:</label>
+                    <input type="password" class="form-control" id="password" placeholder="Masukkan password">
+                </div>
+                <button type="submit" class="btn btn-primary w-100 my-3">Masuk</button>
+            </form>
+        </div>
+
+        <script src="bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
+    </body>
 </html>
