@@ -184,11 +184,11 @@
                   </div>
 
                     <div class="alert alert-success alert-dismissible fade-show form-group" role="alert">
-                      <strong>{{ session('pesan') }}</strong>
-                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                      <strong>Menu berhasil ditambahkan</strong>
+                      <!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> -->
                     </div>
                   
-                  <table id="example1" class="table table-bordered table-hover">
+                  <table id="example1" class="table table-bordered table-hover bg-danger">
                     <thead>
                     <tr>
                       <th>No.</th>
@@ -201,20 +201,22 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <th>{{ $loop->iteration }}</th>
-                            <td>{{ $row->nama_menu }}</td>
-                            <td>@currency($row->harga_menu)</td>
+                            <th>1</th>
+                            <td>Lebanese Kebab Kecil</td>
+                            <td>Rp 10.000</td>
                             <td>
-                              <img src="{{ url('foto-menu').'/'.$row->foto_menu }}" width="70px" class="rounded">
+                              <!-- <img src="asset/img/kebab_kecil.png" width="70px" class="rounded"> -->
                             </td>
-                            <td>{{ $row->deskripsi_menu }}</td>
+                            <td>Kebab dengan ukuran kecil yang berisikan Irisan daging sapi, kol, daun selada, saus sambal, saus tomat, dan saus mayones</td>
                             <td class="d-flex flex-row justify-content-around">
                                 <a href="kelola_menu_edit.html" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i> Ubah</a>
-                                <a data-toggle="modal" data-target="#modal-hapus{{ $row->id_menu }}" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Hapus</a>
+                                <!-- buat laravel -->
+                                <!-- <a data-toggle="modal" data-target="#modal-hapus{{ $row->id_menu }}" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Hapus</a> -->
+                                <a class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Hapus</a>
                             </td>
                         </tr>
 
-                          <div class="modal fade" id="modal-hapus{{ $row->id_menu }}">
+                          <!-- <div class="modal fade" id="modal-hapus{{ $row->id_menu }}">
                             <div class="modal-dialog">
                               <div class="modal-content">
                                 <div class="modal-header">
@@ -234,11 +236,11 @@
                                     <button type="submit" class="btn btn-primary">Ya, Hapus</button>
                                   </form> 
                                 </div>
-                              </div>
+                              </div> -->
                               <!-- /.modal-content -->
-                            </div>
+                            <!-- </div> -->
                             <!-- /.modal-dialog -->
-                          </div>
+                          <!-- </div> -->
                           <!-- /.modal -->
                     
                     </tbody>
@@ -276,19 +278,54 @@
 </div>
 <!-- ./wrapper -->
 
-<!-- REQUIRED SCRIPTS -->
-
 <!-- jQuery -->
 <script src="asset/templatepenjual/plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap -->
+<!-- REQUIRED SCRIPTS -->
+<!-- Page specific script -->
+<script>
+    $(document).ready(function () {
+      $("#example1").DataTable({
+        "responsive": true, 
+        "lengthChange": true, 
+        "autoWidth": false,
+        "lengthMenu": [[5, 10, 25, 50, 100, -1], [5, 10, 25, 50, 100, "Semua"]],
+        "language": {
+            "lengthMenu": "Tampilkan _MENU_ baris data",
+            "info": "Menampilkan _START_ hingga _END_ dari _TOTAL_ baris data",
+            "search": "Cari Menu:",
+            "zeroRecords": "Tidak ditemukan data yang cocok",
+            // "infoEmpty":      "Menampilkan _START_ hingga _END_ dari _TOTAL_ baris data",
+            // "infoFiltered":   "(difilter dari _MAX_ total entri)",
+        }
+      });
+    });
+</script>
+
+<!-- {{-- <script>
+    $(document).ready(function () {
+      $("#example1").DataTable({
+        "responsive": true, "lengthChange": false, "autoWidth": false,
+        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+      }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    });
+</script> --}} -->
+<!-- Bootstrap 4 -->
 <script src="asset/templatepenjual/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE -->
-<script src="asset/templatepenjual/dist/js/adminlte.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="asset/templatepenjual/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="asset/templatepenjual/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="asset/templatepenjual/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="asset/templatepenjual/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="asset/templatepenjual/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="asset/templatepenjual/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="asset/templatepenjual/plugins/jszip/jszip.min.js"></script>
+<script src="asset/templatepenjual/plugins/pdfmake/pdfmake.min.js"></script>
+<script src="asset/templatepenjual/plugins/pdfmake/vfs_fonts.js"></script>
+<script src="asset/templatepenjual/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="asset/templatepenjual/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="asset/templatepenjual/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<!-- AdminLTE App -->
+<script src="asset/templatepenjual/dist/js/adminlte.min.js"></script>
 
-<!-- OPTIONAL SCRIPTS -->
-<script src="asset/templatepenjual/plugins/chart.js/Chart.min.js"></script>
-
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="asset/templatepenjual/dist/js/pages/dashboard3.js"></script>
 </body>
 </html>

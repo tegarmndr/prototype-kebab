@@ -177,19 +177,19 @@
           <div class="col-12">
             <div class="card">
                 <!-- form start -->
-                <form action="{{ route('penjual.simpanMenu') }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+                <form action="#" method="POST" enctype="multipart/form-data" class="form-horizontal">
                   <div class="card-body">
                     <div class="form-group row">
                       <label for="" class="col-sm-2 col-form-label">Nama Menu</label>
                       <div class="col-sm-10">
-                        <input type="text" name="frmNamaMenu" value="" class="form-control @error('frmNamaMenu')is-invalid @enderror" id="" placeholder="Nama menu">
+                        <input type="text" name="frmNamaMenu" value="" class="form-control" id="" placeholder="Nama menu">
                       </div>
                     </div>
 
                     <div class="form-group row">
                         <label for="" class="col-sm-2 col-form-label">Deskripsi Menu</label>
                         <div class="col-sm-10">
-                          <textarea name="frmDeskripsi" rows="5" class="form-control @error('frmDeskripsi')is-invalid @enderror" id="" placeholder="Deskripsi Menu"></textarea>
+                          <textarea name="frmDeskripsi" rows="5" class="form-control" id="" placeholder="Deskripsi Menu"></textarea>
                         </div>
                     </div>
 
@@ -197,14 +197,14 @@
                     <div class="form-group row">
                         <label for="fotoMenu" class="col-sm-2 col-form-label">Foto Menu</label>
                         <div class="col-sm-10">
-                            <input type="file" name="foto" class="form-control @error('foto')is-invalid @enderror">
+                            <input type="file" name="foto" class="form-control">
                         </div>    
                     </div>
 
                     <div class="form-group row">
                         <label for="harga" class="col-sm-2 col-form-label">Harga</label>
                         <div class="col-sm-10">
-                          <input type="number" name="frmHarga" value="" class="form-control @error('frmHarga')is-invalid @enderror" id="hargamenu" placeholder="Harga">
+                          <input type="number" name="frmHarga" value="" class="form-control" id="hargamenu" placeholder="Harga">
                         </div>
                     </div>
 
