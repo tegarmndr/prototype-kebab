@@ -15,6 +15,11 @@
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="asset/templatepenjual/dist/css/adminlte.min.css">
+
+   <!-- DataTables -->
+   <link rel="stylesheet" href="asset/templatepenjual/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+   <link rel="stylesheet" href="asset/templatepenjual/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+   <link rel="stylesheet" href="asset/templatepenjual/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -214,7 +219,7 @@
                             <td>081386230686</td>
                             <td>Jalan Murai 2, Serua Indah, Ciputat, Tangerang Selatan.</td>
                             <td>Penjual</td>
-                            <td style="text-align: center;">
+                            <td>
                                 <a href="kelola_penjual_edit.html" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i> Ubah</a>
                                 <!-- untuk laravel -->
                                 <!-- <a data-toggle="modal" data-target="#modal-hapus{{ $item->id }}" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Hapus</a> -->
@@ -289,22 +294,22 @@
 <!-- REQUIRED SCRIPTS -->
 <!-- Page specific script -->
 <script>
-    $(document).ready(function () {
-      $("#example1").DataTable({
-        "responsive": true, 
-        "lengthChange": true, 
-        "autoWidth": false,
-        "lengthMenu": [[5, 10, 25, 50, 100, -1], [5, 10, 25, 50, 100, "Semua"]],
-        "language": {
-            "lengthMenu": "Tampilkan _MENU_ baris data",
-            "info": "Menampilkan _START_ hingga _END_ dari _TOTAL_ baris data",
-            "search": "Cari:",
-            "zeroRecords": "Tidak ditemukan data yang cocok",
-            // "infoEmpty":      "Menampilkan _START_ hingga _END_ dari _TOTAL_ baris data",
-            // "infoFiltered":   "(difilter dari _MAX_ total entri)",
-        }
-      });
+  $(document).ready(function () {
+    $("#example1").DataTable({
+      "responsive": true, 
+      "lengthChange": true, 
+      "autoWidth": false,
+      "lengthMenu": [[5, 10, 25, 50, 100, -1], [5, 10, 25, 50, 100, "Semua"]],
+      "language": {
+          "lengthMenu": "Tampilkan _MENU_ baris data",
+          "info": "Menampilkan _START_ hingga _END_ dari _TOTAL_ baris data",
+          "search": "Cari Menu:",
+          "zeroRecords": "Tidak ditemukan data yang cocok",
+          // "infoEmpty":      "Menampilkan _START_ hingga _END_ dari _TOTAL_ baris data",
+          // "infoFiltered":   "(difilter dari _MAX_ total entri)",
+      }
     });
+  });
 </script>
 
 <!-- {{-- <script>
