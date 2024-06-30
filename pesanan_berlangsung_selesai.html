@@ -15,6 +15,11 @@
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="asset/templatepenjual/dist/css/adminlte.min.css">
+
+   <!-- DataTables -->
+   <link rel="stylesheet" href="asset/templatepenjual/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+   <link rel="stylesheet" href="asset/templatepenjual/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+   <link rel="stylesheet" href="asset/templatepenjual/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -101,7 +106,7 @@
 
           <!-- <li class="nav-header">Kelola Penjual</li> -->
           <li class="nav-item">
-            <a href="kelola_penjual.html" class="nav-link active">
+            <a href="kelola_penjual.html" class="nav-link">
               <i class="nav-icon fas fa-users"></i>
               <p>Kelola Penjual</p>
             </a>
@@ -109,7 +114,7 @@
           
           <!-- <li class="nav-header">Data Pesanan</li>  -->
           <li class="nav-item">
-            <a href="pesanan_berlangsung.html" class="nav-link">
+            <a href="pesanan_berlangsung.html" class="nav-link active">
               <i class="nav-icon fa-solid fa-arrows-rotate"></i>
               <p>Pesanan Berlangsung</p>
             </a>
@@ -149,13 +154,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Tambah Penjual</h1>
+            <h1 class="m-0">Pesanan Berlangsung</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item"><a href="kelola_penjual.html">Kelola Penjual</a></li>
-              <li class="breadcrumb-item text-muted">Tambah Penjual</li>
+              <li class="breadcrumb-item active">Pesanan Berlangsung</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -169,81 +173,65 @@
         <div class="row">
           <div class="col-12">
             <div class="card">
-                <!-- form start -->
-                <!-- <form action="#" method="POST" class="form-horizontal"> -->
-                  <div class="card-body">
-                    <div class="form-group row">
-                      <label for="" class="col-sm-2 col-form-label">Nama Lengkap</label>
-                      <div class="col-sm-10">
-                        <input type="text" name="frmNamaLengkap" value="" class="form-control" id="" placeholder="Contoh: Budi Baskara">
+              <div class="card-body">
+              <table id="example1" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>ID Pesanan</th>
+                  <th>Status</th>
+                  <th>Nama</th>
+                  <th>Menu</th>
+                  <th>Catatan</th>
+                  <th>Jenis Pembayaran</th>
+                  <th>Harga Total</th>
+                  <th>Aksi</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>148</th>
+                        <td>Persiapan</td>
+                        <td>Rika Prastuti</td>
+                        <td><br class="d-md-none">Lebanese Kebab Besar x1 <br> Lebanese Kebab XL x1</td>
+                        <td><br class="d-md-none">Tidak memakai sayuran dan tidak pedas</td>
+                        <td><br class="d-md-none">Tunai</td>
+                        <td><br class="d-md-none">Rp 13.000</td>
+                        <td>
+                          <br class="d-md-none"> <a href="pesanan_berlangsung_selesai.html" class="btn btn-sm btn-warning w-100" onclick="return confirm('Anda yakin sudah diterima?')"">Diterima</a>
+                        </td>
+                    </tr>
+
+                      <div class="modal fade" id="modal-hapus">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h4 class="modal-title">Konfirmasi Hapus Data</h4>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <p>Apakah anda yakin ingin menghapus data?</p>
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+                                <button type="submit" class="btn btn-primary">Ya, Hapus</button>
+                            </div>
+                          </div> -->
+                          <!-- /.modal-content -->
+                        </div>
+                        <!-- /.modal-dialog -->
                       </div>
-                  </div>
-
-                    <div class="form-group row">
-                      <label for="" class="col-sm-2 col-form-label">Username</label>
-                      <div class="col-sm-10">
-                        <input type="text" name="frmUsername" value="" class="form-control" id="" placeholder="Contoh: budi123">
-                      </div>
-                    </div>
-
-                    <div class="form-group row">
-                      <label for="" class="col-sm-2 col-form-label">E-mail</label>
-                      <div class="col-sm-10">
-                        <input type="text" name="frmEmail" value="" class="form-control" id="" placeholder="Contoh: budi123@gmail.com">
-                      </div>
-                    </div>
-
-                      <div class="form-group row">
-                        <label for="" class="col-sm-2 col-form-label">Password</label>
-                        <div class="col-sm-10">
-                          <input type="password" name="frmPassword" value="" class="form-control" id="" placeholder="Contoh: P@ssw0rd123">
-                        </div>
-                      </div>
-
-                        <div class="form-group row">
-                            <label for="" class="col-sm-2 col-form-label">Tangga Lahir</label>
-                            <div class="col-sm-10">
-                            <input type="date" name="frmTglLahir" value="" class="form-control" id="">
-                            </div>
-                        </div>
-                        
-                        <div class="form-group row">
-                            <label for="" class="col-sm-2 col-form-label">Alamat</label>
-                            <div class="col-sm-10">
-                              <textarea name="frmAlamat" rows="5" class="form-control" id="" placeholder="Contoh: Jl Rajawali Tmr 131, Jawa Barat"></textarea>
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="harga" class="col-sm-2 col-form-label">No Telepon</label>
-                            <div class="col-sm-10">
-                            <input type="number" name="frmnoTelepon" value="" class="form-control " placeholder="Contoh: 081234567890">
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="harga" class="col-sm-2 col-form-label">Role</label>
-                            <div class="col-sm-10">
-                            <select name="frmRole" value="" class="form-control">
-                                <option value="" selected disabled>--Pilih--</option>                          
-                                <option value=""></option>
-                            </select>
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="submit" class="col-sm-2 col-form-label"></label>
-                            <div class="col-sm-10">
-                                <!-- <button type="submit" class="btn btn-primary" onclick="return confirm('Anda yakin ingin menambah data penjual?')">Simpan</a> -->
-                                <a href="kelola_penjual_added.html" class="btn btn-primary" onclick="return confirm('Anda yakin ingin menambah data penjual?')">Simpan</a>
-                            </div>
-                        </div>
-                   
-                <!-- </form> -->
-              </div>
-          
+                      <!-- /.modal -->
                 
-              </div>
+                </tbody>
+                
+              </table>
+             </div>
+
+            </div>
+
+           
           </div>
           <!-- /.col-md-6 -->
         </div>
@@ -263,7 +251,7 @@
 
   <!-- Main Footer -->
   <footer class="main-footer">
-    <strong>Copyright &copy; <?php echo date("Y"); ?> <a style="color:red">Kebab Bang Aji</a>.</strong>
+    <strong>Copyright &copy; <a style="color:red">Kebab Bang Aji</a>.</strong>
     <div class="float-right d-none d-sm-inline-block">
       <b>Version</b> 1.0.0
     </div>
@@ -271,19 +259,54 @@
 </div>
 <!-- ./wrapper -->
 
-<!-- REQUIRED SCRIPTS -->
-
 <!-- jQuery -->
 <script src="asset/templatepenjual/plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap -->
+<!-- REQUIRED SCRIPTS -->
+<!-- Page specific script -->
+<script>
+  $(document).ready(function () {
+    $("#example1").DataTable({
+      "responsive": true, 
+      "lengthChange": true, 
+      "autoWidth": false,
+      "lengthMenu": [[5, 10, 25, 50, 100, -1], [5, 10, 25, 50, 100, "Semua"]],
+      "language": {
+          "lengthMenu": "Tampilkan _MENU_ baris data",
+          "info": "Menampilkan _START_ hingga _END_ dari _TOTAL_ baris data",
+          "search": "Cari Menu:",
+          "zeroRecords": "Tidak ditemukan data yang cocok",
+          // "infoEmpty":      "Menampilkan _START_ hingga _END_ dari _TOTAL_ baris data",
+          // "infoFiltered":   "(difilter dari _MAX_ total entri)",
+      }
+    });
+  });
+</script>
+
+<!-- {{-- <script>
+    $(document).ready(function () {
+      $("#example1").DataTable({
+        "responsive": true, "lengthChange": false, "autoWidth": false,
+        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+      }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    });
+</script> --}} -->
+<!-- Bootstrap 4 -->
 <script src="asset/templatepenjual/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE -->
-<script src="asset/templatepenjual/dist/js/adminlte.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="asset/templatepenjual/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="asset/templatepenjual/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="asset/templatepenjual/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="asset/templatepenjual/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="asset/templatepenjual/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="asset/templatepenjual/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="asset/templatepenjual/plugins/jszip/jszip.min.js"></script>
+<script src="asset/templatepenjual/plugins/pdfmake/pdfmake.min.js"></script>
+<script src="asset/templatepenjual/plugins/pdfmake/vfs_fonts.js"></script>
+<script src="asset/templatepenjual/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="asset/templatepenjual/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="asset/templatepenjual/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<!-- AdminLTE App -->
+<script src="asset/templatepenjual/dist/js/adminlte.min.js"></script>
 
-<!-- OPTIONAL SCRIPTS -->
-<script src="asset/templatepenjual/plugins/chart.js/Chart.min.js"></script>
-
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="asset/templatepenjual/dist/js/pages/dashboard3.js"></script>
 </body>
 </html>
