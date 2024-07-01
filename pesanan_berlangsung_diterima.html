@@ -57,10 +57,6 @@
           </form>
         </div>
       </li>
-
-      <li class="nav-item dropdown">
-
-      </li>
       
       <li class="nav-item">
         <a class="nav-link" href="profile.html">
@@ -110,7 +106,7 @@
 
           <!-- <li class="nav-header">Kelola Penjual</li> -->
           <li class="nav-item">
-            <a href="kelola_penjual.html" class="nav-link active">
+            <a href="kelola_penjual.html" class="nav-link">
               <i class="nav-icon fas fa-users"></i>
               <p>Kelola Penjual</p>
             </a>
@@ -118,7 +114,7 @@
           
           <!-- <li class="nav-header">Data Pesanan</li>  -->
           <li class="nav-item">
-            <a href="pesanan_berlangsung.html" class="nav-link">
+            <a href="pesanan_berlangsung.html" class="nav-link active">
               <i class="nav-icon fa-solid fa-arrows-rotate"></i>
               <p>Pesanan Berlangsung</p>
             </a>
@@ -158,12 +154,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Kelola Penjual</h1>
+            <h1 class="m-0">Pesanan Berlangsung</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item text-muted">Kelola Penjual</li>
+              <li class="breadcrumb-item active">Pesanan Berlangsung</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -177,74 +173,36 @@
         <div class="row">
           <div class="col-12">
             <div class="card">
-                
-                <!-- /.card-header -->
-                <div class="card-body">
-
-                  <div class="form-group">
-                    <a href="kelola_penjual_add.html" class="btn btn-primary"><i class="fas fa-add"></i> Tambah Penjual</a>
-                  </div>
-                  
-                  <table id="example1" class="table table-bordered table-hover">
-                    <thead>
+              <div class="card-body">
+              <table id="example1" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>ID Pesanan</th>
+                  <th>Status</th>
+                  <th>Nama</th>
+                  <th>Menu</th>
+                  <th class="d-none d-lg-inline-block">Catatan</th>
+                  <th class="d-none d-lg-inline-block">Jenis Pembayaran</th>
+                  <th class="d-none d-lg-inline-block">Harga Total</th>
+                  <th class="d-none d-lg-inline-block">Aksi</th>
+                </tr>
+                </thead>
+                <tbody class="d-lg-none">
                     <tr>
-                      <th>No.</th>
-                      <th>Nama Lengkap</th>
-                      <th>Username</th>
-                      <th>E-mail</th>
-                      <th>Lahir</th>
-                      <th>Telepon</th>
-                      <th>Alamat</th>
-                      <th>Role</th>
-                      <th>Aksi</th>
+                        <td colspan="4" class="text-center ">Tidak ada data yang ditampilkan</td>
                     </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th>1</th>
-                            <td>Rifqi Afifi</td>
-                            <td>rifqikebab123</td>
-                            <td>rifqi_kebab@gmail.com</td>
-                            <td>12 Desember 1999</td>
-                            <td>081234567890</td>
-                            <td>Jl. Kebab No. 1, Kota Tangerang, Jawa Barat</td>
-                            <td>Penjual</td>
-                            <td>
-                                <a href="kelola_penjual_edit.html" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i> Ubah</a>
-                                <a data-toggle="modal" data-target="#modal-hapus" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Hapus</a>
-                            </td>
-                        </tr>
+                </tbody>
+                <tbody class="d-none d-lg-inline-block">
+                  <tr>
+                    <td colspan="8" class="text-center">Tidak ada data yang ditampilkan</td>
+                </tr>
+                </tbody>
+                
+              </table>
+             </div>
 
-                          <div class="modal fade" id="modal-hapus">
-                            <div class="modal-dialog">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <h4 class="modal-title">Konfirmasi Hapus Data</h4>
-                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                  </button>
-                                </div>
-                                <div class="modal-body">
-                                  <p>Apakah anda yakin ingin menghapus data?</p>
-                                </div>
-                                <div class="modal-footer justify-content-between">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-                                    <button type="submit" class="btn btn-primary">Ya, Hapus</button>
-                                </div>
-                              </div> -->
-                              <!-- /.modal-content -->
-                            </div>
-                            <!-- /.modal-dialog -->
-                          </div>
-                          <!-- /.modal -->
-                    
-                    </tbody>
-                    
-                  </table>
-                </div>
-                <!-- /.card-body -->
-              </div>
-              <!-- /.card -->
+            </div>
+
            
           </div>
           <!-- /.col-md-6 -->
@@ -265,7 +223,7 @@
 
   <!-- Main Footer -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2024 <a style="color:red">Kebab Bang Aji</a>.</strong>
+    <strong>Copyright &copy; <a style="color:red">Kebab Bang Aji</a>.</strong>
     <div class="float-right d-none d-sm-inline-block">
       <b>Version</b> 1.0.0
     </div>
@@ -287,7 +245,7 @@
       "language": {
           "lengthMenu": "Tampilkan _MENU_ baris data",
           "info": "Menampilkan _START_ hingga _END_ dari _TOTAL_ baris data",
-          "search": "Cari Penjual:",
+          "search": "Cari Pesanan:",
           "zeroRecords": "Tidak ditemukan data yang cocok",
           // "infoEmpty":      "Menampilkan _START_ hingga _END_ dari _TOTAL_ baris data",
           // "infoFiltered":   "(difilter dari _MAX_ total entri)",
